@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    tools:context=".Activity.signUp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="40dp">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@drawable/profile"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/etStyle"
+            android:text="Get Started"
+            android:textStyle="bold"
+            android:textSize="24sp"/>
+
+        <EditText
+            android:id="@+id/signupName"
+            style="@style/etStyle"
+            android:background="@drawable/et_shape"
+            android:hint="Name"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/signupEmali"
+            style="@style/etStyle"
+            android:background="@drawable/et_shape"
+            android:hint="Enter email address"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/signupPassword"
+            style="@style/etStyle"
+            android:background="@drawable/et_shape"
+            android:hint="Enter password"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/signupConfirmPassword"
+            style="@style/etStyle"
+            android:background="@drawable/et_shape"
+            android:hint="Enter password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/signupButton"
+            style="@style/etStyle"
+            android:background="@drawable/et_shape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="sign up" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I am existing user   " />
+
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SIGN IN"
+            android:textColor="@color/purple_700"/>
+
+    </LinearLayout>
+</RelativeLayout>
