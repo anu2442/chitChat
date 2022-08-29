@@ -131,7 +131,7 @@ public class signUp extends AppCompatActivity {
                                                                     Intent intent = new Intent(signUp.this, HomeActivity.class);
                                                                     startActivity(intent);
                                                                 }else {
-                                                                    Toast.makeText(signUp.this, "Error in Creating a new User", Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(signUp.this, "Error in Creating a new User with image", Toast.LENGTH_SHORT).show();
                                                                 }
                                                             }
                                                         });
