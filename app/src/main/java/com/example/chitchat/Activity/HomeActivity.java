@@ -48,22 +48,6 @@ public class HomeActivity extends AppCompatActivity {
 
         DatabaseReference databaseReference = database.getReference().child("user");
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot:snapshot.getChildren()) {
-                    User user = dataSnapshot.getValue(User.class);
-                    userArrayList.add(user);
-                }
-                adapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
         homeRecyclerView = findViewById(R.id.homeRecyclerView);
         homeRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new UserAdapter(HomeActivity.this,userArrayList);
@@ -83,5 +67,21 @@ public class HomeActivity extends AppCompatActivity {
             Intent intent = new Intent(HomeActivity.this,signUp.class);
             startActivity(intent);
         }
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot:snapshot.getChildren()) {
+                    User user = dataSnapshot.getValue(User.class);
+                    userArrayList.add(user);
+                    adapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

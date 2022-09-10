@@ -112,7 +112,7 @@ public class signUp extends AppCompatActivity {
                             if (task.isSuccessful()) {
 
                                 DatabaseReference databaseReference = database.getReference().child("user").child(mAuth.getUid());
-                                StorageReference storageReference = storage.getReference().child("upload").child(mAuth.getUid());
+                                StorageReference storageReference = storage.getReference().child("upload").child(mAuth.getUid()); 
 
                                 if (imageUri != null){
                                     storageReference.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
@@ -172,7 +172,7 @@ public class signUp extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode==10 && resultCode == RESULT_OK){
-            if (data!=null){
+            if (data!=null && data.getData()!=null){
                 imageUri = data.getData();
                 profileImage.setImageURI(imageUri);;
             }

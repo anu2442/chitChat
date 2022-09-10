@@ -36,8 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/homeRecyclerView"
-        android:layout_below="@+id/homeToolBar"
-        style="@style/etStyle">
+        android:layout_below="@+id/homeToolBar">
 
 
 
